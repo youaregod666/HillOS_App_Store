@@ -9,22 +9,21 @@ local system = require("System")
 local internet = require("Internet")
 
 --------------------------------------------------------------------------------
-local currentScriptDirectory = filesystem.path(system.getCurrentScript())
+
+local currentScriptDirectory2 = filesystem.path(system.getCurrentScript())
 local DLN
 DLN = 1
 if DLN == 1 then
-	internet.download("", currentScriptDirectory .. "Modules/Main1.lua")
-	internet.download("", currentScriptDirectory .. "Modules/Icon1.pic")
-	filesystem.remove(currentScriptDirectory .. "Modules/Main.lua")
-	filesystem.remove(currentScriptDirectory .. "Modules/Icon.pic")
-	filesystem.rename(currentScriptDirectory .. "Modules/Main1.lua", currentScriptDirectory .. "Modules/Main.lua")
-	filesystem.rename(currentScriptDirectory .. "Modules/Icon1.pic", currentScriptDirectory .. "Modules/Icon.pic")
-	DLN = 1
+	filesystem.remove(currentScriptDirectory2 .. "Modules/1_Home/Main.lua")
+	filesystem.remove(currentScriptDirectory2 .. "Modules/1_Home/Icon.pic")
+	internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/1_Home/Main.lua", currentScriptDirectory2 .. "Modules/1_Home/Main.lua")
+	internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/1_Home/Icon.pic", currentScriptDirectory2 .. "Modules/1_Home/Icon.pic")
+	DLN = 2
 end
 
-
-local modulesPath = currentScriptDirectory .. "Modules/"
+local currentScriptDirectory = filesystem.path(system.getCurrentScript())
 local localization = system.getLocalization(currentScriptDirectory .. "Localizations/")
+local modulesPath = currentScriptDirectory .. "Modules/"
 local scrollSpeed = 2
 
 --------------------------------------------------------------------------------
