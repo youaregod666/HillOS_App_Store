@@ -11,7 +11,7 @@ local internet = require("Internet")
 --------------------------------------------------------------------------------
 local currentScriptDirectory = filesystem.path(system.getCurrentScript())
 local DLN
-DLN = 2
+DLN = 1
 if DLN == 1 then
 	internet.download("", currentScriptDirectory .. "Modules/Main1.lua")
 	internet.download("", currentScriptDirectory .. "Modules/Icon1.pic")
