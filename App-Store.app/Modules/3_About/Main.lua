@@ -34,7 +34,7 @@ module.onTouch = function()
     return button
   end
   local AppVersion
-  AppVersion = "0.0.0.11"
+  AppVersion = "0.0.0.27"
 
   local function flashEFI(url)
     internet.download(url, "/tempEFI.lua")
