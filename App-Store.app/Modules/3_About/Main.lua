@@ -1,7 +1,6 @@
 
 local GUI = require("GUI")
 local text = require("Text")
-local filesystem = require("Filesystem")
 local paths = require("Paths")
 local system = require("System")
 local fs = require("Filesystem")
@@ -16,6 +15,8 @@ local module = {}
 local workspace, window, localization = table.unpack({...})
 local userSettings
 userSettings = system.getUserSettings()
+
+local currentScriptDirectory2 = fs.path(system.getCurrentScript())
 
 --------------------------------------------------------------------------------
 
@@ -46,8 +47,17 @@ module.onTouch = function()
   local Label_Info = window.contentLayout:addChild(GUI.text(1, 1, 0x2D2D2D, "Version: " .. AppVersion))
   local Button_Info = addButton(window.contentLayout, 1, 36, "Check For Updates")
   Button_Info.onTouch = function()
-    GUI.alert("This Does Nothing Right Now")
-    --internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Info.app/Main.lua", "/tempMain.lua")
+    --GUI.alert("This Does Nothing Right Now")
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Version.txt", "/VerTemp.temp")
+    local VersionThing2
+    VersionThing2 = fs.read("/VerTemp.temp")
+    if AppVersion == VersionThing2 then
+    else
+      internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Main.lua", currentScriptDirectory2 .."Main.lua")
+      internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Icon.pic", currentScriptDirectory2 .."Icon.pic")
+      internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Version.txt", currentScriptDirectory2 .."Modules/3_About/Main.lua")
+      internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Version.txt", currentScriptDirectory2 .."Modules/3_About/Icon.pic")
+    end
 
   end
 
