@@ -13,6 +13,7 @@ local internet = require("Internet")
 local currentScriptDirectory2 = filesystem.path(system.getCurrentScript())
 local DLN
 DLN = 2
+system.NeededForAppstore = currentScriptDirectory2
 if DLN == 1 then
 	filesystem.remove(currentScriptDirectory2 .. "Modules/1_Home/Main.lua")
 	filesystem.remove(currentScriptDirectory2 .. "Modules/1_Home/Icon.pic")

@@ -16,7 +16,7 @@ local workspace, window, localization = table.unpack({...})
 local userSettings
 userSettings = system.getUserSettings()
 
-local currentScriptDirectory2 = fs.path(system.getCurrentScript())
+local currentScriptDirectory2 = system.NeededForAppstore
 
 --------------------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ module.onTouch = function()
     return button
   end
   local AppVersion
-  AppVersion = "0.0.0.27"
+  AppVersion = "0.0.0.11"
 
   local function flashEFI(url)
     internet.download(url, "/tempEFI.lua")
@@ -55,8 +55,8 @@ module.onTouch = function()
     else
       internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Main.lua", currentScriptDirectory2 .."Main.lua")
       internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Icon.pic", currentScriptDirectory2 .."Icon.pic")
-      internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Version.txt", currentScriptDirectory2 .."Modules/3_About/Main.lua")
-      internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Version.txt", currentScriptDirectory2 .."Modules/3_About/Icon.pic")
+      internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/3_About/Main.lua", currentScriptDirectory2 .."Modules/3_About/Main.lua")
+      internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/3_About/Icon.pic", currentScriptDirectory2 .."Modules/3_About/Icon.pic")
     end
 
   end
