@@ -19,6 +19,10 @@ if DLN == 1 then
 	filesystem.remove(currentScriptDirectory2 .. "Modules/1_Home/Icon.pic")
 	internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/1_Home/Main.lua", currentScriptDirectory2 .. "Modules/1_Home/Main.lua")
 	internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/1_Home/Icon.pic", currentScriptDirectory2 .. "Modules/1_Home/Icon.pic")
+	filesystem.remove(currentScriptDirectory2 .. "Modules/2_Update/Main.lua")
+	filesystem.remove(currentScriptDirectory2 .. "Modules/2_Update/Icon.pic")
+	internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/2_Update/Main.lua", currentScriptDirectory2 .. "Modules/2_Update/Main.lua")
+	internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/2_Update/Icon.pic", currentScriptDirectory2 .. "Modules/2_Update/Icon.pic")
 	DLN = 2
 end
 
