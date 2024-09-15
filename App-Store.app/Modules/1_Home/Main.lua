@@ -20,7 +20,7 @@ userSettings = system.getUserSettings()
 --------------------------------------------------------------------------------
 
 module.name = "Home"
-module.margin = 3
+module.margin = 5
 module.onTouch = function()
 
   local function addButton(parent, x, width, ...)
@@ -108,6 +108,44 @@ module.onTouch = function()
     fs.rename("/tempStormy.pic", HS .. "/Stormy.pic")
     fs.rename("/tempSunny.pic", HS .. "/Sunny.pic")
   end
+
+  -- Running String
+  local Label_Running_String = window.contentLayout:addChild(GUI.text(1, 1, 0x2D2D2D, "Running String"))
+  local Button_Running_String = addButton(window.contentLayout, 1, 36, "Download and Install")
+  Button_Running_String.onTouch = function()
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Running%20String.app/Main.lua", "/tempMain.lua")
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Running%20String.app/Icon.pic", "/tempIcon.pic")
+    local HS
+    HS = "/Programs/Running String.app"
+    fs.makeDirectory(HS)
+    fs.rename("/tempMain.lua", HS .. "/Main.lua")
+    fs.rename("/tempIcon.pic", HS .. "/Icon.pic")
+  end
+
+  -- Running String
+  local Label_Calendar = window.contentLayout:addChild(GUI.text(1, 1, 0x2D2D2D, "Calendar"))
+  local Button_Calendar = addButton(window.contentLayout, 1, 36, "Download and Install")
+  Button_Calendar.onTouch = function()
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Calendar.app/Main.lua", "/tempMain.lua")
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Calendar.app/Icon.pic", "/tempIcon.pic")
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Calendar.app/Localizations/English.lang", "/tempEnglish.lang")
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Calendar.app/Localizations/Russian.lang", "/tempRussian.lang")
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Calendar.app/Icons/ArrowLeft.pic", "/tempArrowLeft.pic")
+    internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Calendar.app/Icons/ArrowRight.pic", "/tempArrowRight.pic")
+    local HS
+    HS = "/Programs/Calendar.app"
+    fs.makeDirectory(HS)
+    fs.makeDirectory( HS .."/Localizations")
+    fs.makeDirectory( HS .."/Icons")
+    fs.rename("/tempMain.lua", HS .. "/Main.lua")
+    fs.rename("/tempIcon.pic", HS .. "/Icon.pic")
+    fs.rename("/tempEnglish.lang", HS .. "/Localizations/English.lang")
+    fs.rename("/tempRussian.lang", HS .. "/Localizations/Russian.lang")
+    fs.rename("/tempArrowLeft.pic", HS .. "/Icons/ArrowLeft.pic")
+    fs.rename("/tempArrowRight.pic", HS .. "/Icons/ArrowRight.pic")
+
+  end
+
 
   end
 --------------------------------------------------------------------------------

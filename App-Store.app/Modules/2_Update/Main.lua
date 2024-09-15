@@ -41,8 +41,12 @@ module.onTouch = function()
   end
 
   -- Info
-  local Label_Info = window.contentLayout:addChild(GUI.text(1, 1, 0x2D2D2D, "This Page Does Nothing Right Now"))
+  local Label_Info = window.contentLayout:addChild(GUI.text(1, 1, 0x2D2D2D, "No Updates for any apps right now"))
 
+  --local Button_Running_String = addButton(window.contentLayout, 1, 36, "Download and Install")
+  --Button_Running_String.onTouch = function()
+
+  --end
 
   end
 --------------------------------------------------------------------------------

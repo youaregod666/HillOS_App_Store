@@ -34,7 +34,7 @@ module.onTouch = function()
     return button
   end
   local AppVersion
-  AppVersion = "0.0.0.27"
+  AppVersion = "0.0.0.34"
 
   local function flashEFI(url)
     internet.download(url, "/tempEFI.lua")
@@ -58,7 +58,7 @@ module.onTouch = function()
       internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/3_About/Main.lua", currentScriptDirectory2 .."Modules/3_About/Main.lua")
       internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/App-Store.app/Modules/3_About/Icon.pic", currentScriptDirectory2 .."Modules/3_About/Icon.pic")
     end
-
+    fs.remove("/VerTemp.temp")
   end
 
 
