@@ -33,13 +33,6 @@ module.onTouch = function()
     return button
   end
 
-  local function flashEFI(url)
-    internet.download(url, "/tempEFI.lua")
-    EFI.set(fs.read("/tempEFI.lua"))
-    EFI.setLabel("HillOS BIOS")
-    fs.remove("/tempEFI.lua")
-  end
-
   -- Info
   local Label_Info = window.contentLayout:addChild(GUI.text(1, 1, 0x2D2D2D, "Info"))
   local Button_Info = addButton(window.contentLayout, 1, 36, "Download and Install")
@@ -49,7 +42,7 @@ module.onTouch = function()
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Info.app/Localizations/English.lang", "/tempEnglish.lang")
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Info.app/Localizations/Russian.lang", "/tempRussian.lang")
     local HS
-    HS = "/Programs/Info.app"
+    HS = paths.system.applications .. "Info.app"
     fs.makeDirectory(HS)
     fs.makeDirectory( HS .."/Localizations")
     fs.rename("/tempMain.lua", HS .. "/Main.lua")
@@ -65,7 +58,7 @@ module.onTouch = function()
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Lua.app/Main.lua", "/tempMain.lua")
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Lua.app/Icon.pic", "/tempIcon.pic")
     local HS
-    HS = "/Programs/Lua.app"
+    HS = paths.system.applications .. "Lua.app"
     fs.makeDirectory(HS)
     fs.rename("/tempMain.lua", HS .. "/Main.lua")
     fs.rename("/tempIcon.pic", HS .. "/Icon.pic")
@@ -78,7 +71,7 @@ module.onTouch = function()
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Symbols.app/Main.lua", "/tempMain.lua")
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Symbols.app/Icon.pic", "/tempIcon.pic")
     local HS
-    HS = "/Programs/Symbols.app"
+    HS = paths.system.applications .. "Symbols.app"
     fs.makeDirectory(HS)
     fs.rename("/tempMain.lua", HS .. "/Main.lua")
     fs.rename("/tempIcon.pic", HS .. "/Icon.pic")
@@ -97,7 +90,7 @@ module.onTouch = function()
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Weather.app/Stormy.pic", "/tempStormy.pic")
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Weather.app/Sunny.pic", "/tempSunny.pic")
     local HS
-    HS = "/Programs/Weather.app"
+    HS = paths.system.applications .. "Weather.app"
     fs.makeDirectory(HS)
     fs.rename("/tempMain.lua", HS .. "/Main.lua")
     fs.rename("/tempIcon.pic", HS .. "/Icon.pic")
@@ -116,7 +109,7 @@ module.onTouch = function()
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Running%20String.app/Main.lua", "/tempMain.lua")
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Running%20String.app/Icon.pic", "/tempIcon.pic")
     local HS
-    HS = "/Programs/Running String.app"
+    HS = paths.system.applications .. "Running String.app"
     fs.makeDirectory(HS)
     fs.rename("/tempMain.lua", HS .. "/Main.lua")
     fs.rename("/tempIcon.pic", HS .. "/Icon.pic")
@@ -133,7 +126,7 @@ module.onTouch = function()
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Calendar.app/Icons/ArrowLeft.pic", "/tempArrowLeft.pic")
     internet.download("https://raw.githubusercontent.com/youaregod666/HillOS_App_Store/main/Apps/Calendar.app/Icons/ArrowRight.pic", "/tempArrowRight.pic")
     local HS
-    HS = "/Programs/Calendar.app"
+    HS = paths.system.applications .. "Calendar.app"
     fs.makeDirectory(HS)
     fs.makeDirectory( HS .."/Localizations")
     fs.makeDirectory( HS .."/Icons")
